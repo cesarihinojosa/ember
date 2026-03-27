@@ -1,7 +1,41 @@
 [gd_scene format=3 uid="uid://cx800mso8e76v"]
 
 [ext_resource type="PackedScene" uid="uid://bvtraety32l0x" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://mt7rojh4s2xs" path="res://assets/Backgrounds/Purple/PurpleBG2.png" id="2_iywne"]
+[ext_resource type="Texture2D" uid="uid://b0xpm7xpbsqh2" path="res://assets/Backgrounds/Purple/PurpleBG3.png" id="2_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://d074b7kd7n1ox" path="res://assets/Backgrounds/Purple/PurpleBG1.png" id="2_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://b6rwvtm3sgc84" path="res://assets/Backgrounds/Purple/PurpleBG4.png" id="3_iywne"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iywne"]
 
 [node name="Game" type="Node2D" unique_id=1088323306]
 
+[node name="BG_01" type="Parallax2D" parent="." unique_id=265813551]
+
+[node name="Sprite2D" type="Sprite2D" parent="BG_01" unique_id=1609018487]
+texture = ExtResource("2_yqjtg")
+
+[node name="BG_02" type="Parallax2D" parent="." unique_id=411666106]
+
+[node name="Sprite2D" type="Sprite2D" parent="BG_02" unique_id=573267953]
+texture = ExtResource("2_iywne")
+
+[node name="BG_03" type="Parallax2D" parent="." unique_id=1760190123]
+
+[node name="Sprite2D" type="Sprite2D" parent="BG_03" unique_id=295662924]
+texture = ExtResource("2_lbhrr")
+
+[node name="BG_04" type="Parallax2D" parent="." unique_id=1117414256]
+
+[node name="Sprite2D" type="Sprite2D" parent="BG_04" unique_id=1013148537]
+texture = ExtResource("3_iywne")
+
 [node name="Player" parent="." unique_id=512832374 instance=ExtResource("1_uwrxv")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=8856038]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2100721358]
+position = Vector2(0, 48)
+shape = SubResource("WorldBoundaryShape2D_iywne")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=594297064]

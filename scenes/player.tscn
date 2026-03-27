@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bvtraety32l0x"]
 
 [ext_resource type="Texture2D" uid="uid://b0c60kepnuufd" path="res://assets/Spritesheets/Characters/dwarfSpritesheet1.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://cew3xxhr4dvoh" path="res://scenes/player.gd" id="1_g2els"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -63,23 +64,21 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 13.0
+"speed": 16.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2wvv"]
 size = Vector2(7, 10.5)
 
 [node name="Player" type="CharacterBody2D" unique_id=512832374]
+script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=296011911]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_y4r1p")
 autoplay = "default"
-frame = 1
-frame_progress = 0.88437116
+frame_progress = 0.59492254
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=92461776]
 position = Vector2(-0.5, 2.25)
 shape = SubResource("RectangleShape2D_d2wvv")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2042307335]
-zoom = Vector2(6, 6)
